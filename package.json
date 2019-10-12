@@ -1,0 +1,44 @@
+{
+  "name": "ui-challenge",
+  "version": "1.0.0",
+  "description": "a responsive web-page that works across all devices (Desktop, Tablets, Medium and small mobile screens). min screen width 320px.",
+  "main": "scr/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --watch --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KholoudTalaat91/UI-Challenge.git"
+  },
+  "author": "kholoud talaat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KholoudTalaat91/UI-Challenge/issues"
+  },
+  "homepage": "https://github.com/KholoudTalaat91/UI-Challenge#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash-es": "^4.17.15",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "pug-html-loader": "^1.1.5",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "dependencies": {
+    "fibers": "^4.0.1",
+    "jquery": "^3.4.1"
+  }
+}
