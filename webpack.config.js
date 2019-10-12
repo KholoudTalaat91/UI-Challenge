@@ -1,7 +1,20 @@
+// plugins
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+// modules
+const js = {
+  test: /\.js$/,
+  exclude: /(node_modules)/,
+  use: {
+    loader: "babel-loader",
+    options: {
+      presets: ["@babel/preset-env"]
+    }
+  }
+};
 
 const pug = {
   test: /\.pug$/,
@@ -9,15 +22,26 @@ const pug = {
 };
 
 const sass = {
-  test: /\.s[ac]ss$/i,
-  // test: /\.(sa|sc|c)ss$/,
+  test: /\.(sa|sc|c)ss$/,
   use: [
-    // Creates `style` nodes from JS strings
-    "style-loader",
-    // Translates CSS into CommonJS
-    "css-loader",
-    // Compiles Sass to CSS
-    "sass-loader"
+    {
+      loader: MiniCssExtractPlugin.loader
+    },
+    {
+      // This loader resolves url() and @imports inside CSS
+      loader: "css-loader"
+    },
+    {
+      // Then we apply postCSS fixes like autoprefixer and minifying
+      loader: "postcss-loader"
+    },
+    {
+      // First we transform SASS to standard CSS
+      loader: "sass-loader",
+      options: {
+        implementation: require("sass")
+      }
+    }
   ]
 };
 
@@ -31,24 +55,55 @@ const babel = {
     }
   }
 };
+
+const images = {
+  test: /\.(png|jpe?g|gif)$/i,
+  use: [
+    {
+      loader: "file-loader",
+      options: {
+        // youtputPath:
+        name: "[path][name].[ext]"
+      }
+    }
+  ]
+};
+
+const fonts = {
+  test: /\.(woff|woff2|ttf|otf|eot)$/,
+  use: [
+    {
+      loader: "file-loader",
+      options: {
+        name: "[name].[ext]",
+        outputPath: "fonts/"
+      }
+    }
+  ]
+};
+const videos = {
+  test: /\.(mp4|mov|wav)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+  loader: "file-loader",
+  options: {
+    name: "[path][name].[ext]"
+  }
+};
 module.exports = {
   entry: { index: "./src/js/index.js" },
+
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js"
   },
+
   mode: "development",
+
   module: {
-    rules: [pug, sass, babel]
+    rules: [js, pug, sass, babel, images, fonts]
   },
+
   plugins: [
     new HtmlWebpackPlugin({
-      // filename: "index.html",
-      // template: path.resolve(__dirname, "src/pug/index.pug"),
-      // // template: "src/pug/index.pug",
-      // inject: true,
-      // chunks: ["index"],
-      // chunksSortMode: "manual"
       inject: true,
       filename: "index.html",
       template: path.resolve(__dirname, "src/pug/index.pug"),
@@ -58,13 +113,19 @@ module.exports = {
       // chunksSortMode: "manual"
     }),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // all options are optional
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-      // filename: devMode ? "[name].css" : "[name].[hash].css",
-      // chunkFilename: devMode ? "[id].css" : "[id].[hash].css"
-      // ignoreOrder: false // Enable to remove warnings about conflicting order
-    })
+      filename: "[name].bundle.css"
+    }),
+
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, "assets/images"),
+        to: path.resolve(__dirname, "dist/assets/images")
+      }
+    ])
+    // for vid if found
+    // new CopyWebpackPlugin([{
+    //   from: path.resolve(__dirname, 'assets/videos'),
+    //   to: path.resolve(__dirname, 'dist/assets/videos')
+    // }])
   ]
 };
