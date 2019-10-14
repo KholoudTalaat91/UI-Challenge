@@ -24,11 +24,27 @@ body {
   }
   a {
     text-decoration: none;
+    transition: all 200ms ease-out;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 .container {
-  width: font-rem(1210);
+  width: font-rem(1200);
   margin: auto;
+  padding: 0 font-rem(5);
+  max-width: 100%;
+  @include belowDesktop {
+    width: font-rem(992);
+  }
+  @include belowTablet {
+    width: font-rem(768);
+  }
+  @include belowPhone {
+    width: 100%;
+  }
 }
 select {
   -webkit-appearance: none !important;
@@ -42,4 +58,14 @@ select {
   font-size: font-rem(12);
   border: none;
   cursor: pointer;
+}
+button,
+.btn {
+  border: none;
+  background: $pink;
+  color: $white;
+  padding: font-rem(10);
+  font-family: $catamaran;
+  font-size: font-rem(18);
+  display: inline-block;
 }

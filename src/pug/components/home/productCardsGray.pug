@@ -1,5 +1,4 @@
 include ../../mixins/productCardMixin.pug
 -var productsArr=[{imgPath:"assets/images/products/3.png", title:"WorkWear", path:"#"},{imgPath:"assets/images/products/4.png", title:"Casual Wear", path:"#"}]
-.fourthSection
-    each product in productsArr
-        +productCard(product)
+.products_gray
+    +productCard(productsArr)

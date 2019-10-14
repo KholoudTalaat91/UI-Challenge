@@ -1,5 +1,20 @@
-@mixin aboveDesktop() {
-  @media (min-width: 1200px) {
+// @mixin aboveDesktop() {
+//   @media (min-width: 1200px) {
+//     @content;
+//   }
+// }
+@mixin belowDesktop() {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin belowTablet() {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin belowPhone() {
+  @media (max-width: 768px) {
     @content;
   }
 }

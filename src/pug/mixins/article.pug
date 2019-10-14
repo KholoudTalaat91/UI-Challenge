@@ -1,9 +1,12 @@
-//- -var content= {imgPath: "", date: "", title: "", text: "", linkTitle: "", linkPath: ""} 
+//- -var content= {imgPath1: "", imgPath2: "", date: "", title: "", text: "", linkTitle: "", linkPath: ""} 
 mixin article(content)
     article.article
-        img(src=`${content.imgPath}`, alt=`${content.title}`)
-        div
+        div.article__images
+            img(src=`${content.imgPath1}`, alt=`${content.title}`)
+            if content.imgPath2
+                img(src=`${content.imgPath2}`, alt=`${content.title}`)
+        div.article__content
             time=content.date
             h2=content.title
             p=content.text
-            a(href=`${content.linkPath}` title=`${content.linkTitle}`)=content.linkTitle
+            a.btn(href=`${content.linkPath}` title=`${content.linkTitle}`)=content.linkTitle

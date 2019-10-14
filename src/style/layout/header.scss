@@ -20,18 +20,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: font-rem(40);
+    // margin-bottom: font-rem(40);
+    margin-bottom: font-rem(20);
+    @include belowPhone {
+      flex-direction: column;
+    }
   }
   &__currency {
+    margin-bottom: font-rem(20);
   }
   &__logo {
     font-size: font-rem(17);
     text-transform: uppercase;
     font-weight: bold;
+    margin-bottom: font-rem(20);
+    @include belowPhone {
+      order: -1;
+    }
   }
   &__accountDetails {
     display: flex;
     align-items: center;
+    margin-bottom: font-rem(20);
     ul {
       display: flex;
       li {

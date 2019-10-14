@@ -7,7 +7,7 @@
     margin: 0px font-rem(125);
     display: flex;
     justify-content: space-between;
-    position: relative;
+    // position: relative;
   }
   &__mainMenuItem {
     a {
@@ -27,8 +27,12 @@
     }
   }
   &__subMenu {
-    padding: 0px font-rem(5);
+    padding: 0px calc((100% - 1210px) / 2 + 135px);
+    z-index: 1;
+    // padding: 0px font-rem(135);
+    // padding: 0px font-rem(5);
     // display: flex;
+    // width: font-rem(1210);
     justify-content: space-between;
     display: none;
     position: absolute;

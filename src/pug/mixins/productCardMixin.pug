@@ -1,6 +1,11 @@
 //- -var content = {"imgPath":"","title":"", "path":""}
-mixin productCard(content)
-    .productCard
-        img(src=`${content.imgPath}`, alt=`${content.title}`)
-        h3=content.title
-        a(href=`${content.path}` title=`${content.title}`) shop now
+mixin productCard(productsArr)
+    section.productCardSection
+        .container
+            .productCardSection__cardsContainer
+                each product in productsArr
+                    div.productCardSection__productCard
+                        div.productCardSection__imgContainer
+                            img(src=`${product.imgPath}`, alt=`${product.title}`)
+                        h3=product.title
+                        a(href=`${product.path}` title=`${product.title}`) shop now
