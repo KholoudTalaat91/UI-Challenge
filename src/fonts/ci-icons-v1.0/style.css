@@ -1,32 +1,18 @@
 @font-face {
-  font-family: "segoeUI-Semilight";
-  src: url("../fonts/segoeUI-Semilight.woff") format("woff");
-  // url("../fonts/segoeUI-Semilight.ttf") format("truetype"),
-  // url("../fonts/segoeUI-Semilight.svg#segoeUI-Semilight") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  // font-display: fallback;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Catamaran&display=swap");
-
-// icons
-@font-face {
-  font-family: "ci-icons";
-  src: url("../fonts/ci-icons.eot?66fxw0");
-  src: url("../fonts/ci-icons.eot?66fxw0#iefix") format("embedded-opentype"),
-    url("../fonts/ci-icons.ttf?66fxw0") format("truetype"),
-    url("../fonts/ci-icons.woff?66fxw0") format("woff"),
-    url("../fonts/ci-icons.svg?66fxw0#ci-icons") format("svg");
+  font-family: 'ci-icons';
+  src:  url('fonts/ci-icons.eot?66fxw0');
+  src:  url('fonts/ci-icons.eot?66fxw0#iefix') format('embedded-opentype'),
+    url('fonts/ci-icons.ttf?66fxw0') format('truetype'),
+    url('fonts/ci-icons.woff?66fxw0') format('woff'),
+    url('fonts/ci-icons.svg?66fxw0#ci-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "ci-icons" !important;
+  font-family: 'ci-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

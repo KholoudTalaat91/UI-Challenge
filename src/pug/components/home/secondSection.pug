@@ -1,0 +1,5 @@
+include ../../mixins/productCardMixin.pug
+-var productsArr=[{imgPath:"assets/images/products/1.png", title:"Get The Fresh Look", path:"#"},{imgPath:"assets/images/products/2.png", title:"Last Dips Of Summer", path:"#"}]
+.secondSection
+    each product in productsArr
+        +productCard(product)

@@ -5,6 +5,10 @@ block vars
     -var pageClass = 'homePage'
 block content
     main 
-        section 
-            p test
+        section
+            include components/home/carousel.pug
+            include components/home/secondSection.pug
+            include components/home/victoriaBlendStory.pug
+            include components/home/fourthSection.pug
+            include components/home/bohemiaArticle.pug
             img(src="../../assets/images/test.jpg" alt="test")

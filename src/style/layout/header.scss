@@ -1,0 +1,68 @@
+.header {
+  &__upper {
+    margin-bottom: font-rem(35);
+    p {
+      margin: 0 auto;
+      text-align: center;
+      background: $black;
+      color: $white;
+      font-size: font-rem(14);
+      padding: font-rem(7) 0 font-rem(5);
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__main {
+  }
+  &__brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: font-rem(40);
+  }
+  &__currency {
+  }
+  &__logo {
+    font-size: font-rem(17);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  &__accountDetails {
+    display: flex;
+    align-items: center;
+    ul {
+      display: flex;
+      li {
+        a {
+          text-decoration: none;
+          border: font-rem(1.5) solid $pink;
+          width: font-rem(28);
+          height: font-rem(28);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100%;
+          color: $pink;
+          margin-left: font-rem(35);
+          span {
+            &.icon-zoom,
+            &.icon-lock {
+              font-size: 30px !important;
+            }
+          }
+          &:hover {
+            background: $pink;
+            color: $white;
+            span {
+              &::before {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

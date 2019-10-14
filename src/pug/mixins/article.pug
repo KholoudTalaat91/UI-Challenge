@@ -1,0 +1,9 @@
+//- -var content= {imgPath: "", date: "", title: "", text: "", linkTitle: "", linkPath: ""} 
+mixin article(content)
+    article.article
+        img(src=`${content.imgPath}`, alt=`${content.title}`)
+        div
+            time=content.date
+            h2=content.title
+            p=content.text
+            a(href=`${content.linkPath}` title=`${content.linkTitle}`)=content.linkTitle

@@ -1,0 +1,107 @@
+.nav {
+  //   background: red;
+
+  &__mainMenu {
+  }
+  &__mainMenuItemsContainer {
+    margin: 0px font-rem(125);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  &__mainMenuItem {
+    a {
+      padding: font-rem(10) font-rem(10) font-rem(10) 0;
+      display: inline-block;
+      color: $black;
+      font-size: font-rem(15);
+      border-bottom: font-rem(5) solid $white;
+    }
+    &:hover {
+      & > a {
+        border-bottom: font-rem(5) solid $pink;
+      }
+      .nav__subMenu {
+        display: flex;
+      }
+    }
+  }
+  &__subMenu {
+    padding: 0px font-rem(5);
+    // display: flex;
+    justify-content: space-between;
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: $white;
+    li {
+      width: 25%;
+      a {
+        color: $black;
+      }
+    }
+  }
+  &__subMenuList {
+    margin-bottom: font-rem(20);
+    h3 {
+      font-weight: bold;
+      font-size: font-rem(17);
+      margin-bottom: font-rem(10);
+    }
+  }
+  &__subMenuListsContainer {
+    display: flex;
+    ul {
+      width: 50%;
+      li {
+        width: 100%;
+        a {
+          padding: font-rem(15) 0;
+          display: block;
+          &:hover {
+            color: $pink;
+          }
+        }
+      }
+    }
+  }
+  &__prductCards {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-bottom: font-rem(20);
+    li {
+      //   width: 100%;
+      flex-grow: 1;
+      &:first-child {
+        padding-right: font-rem(15);
+      }
+      &:last-child {
+        padding-left: font-rem(15);
+      }
+      a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        img {
+          width: 100%;
+        }
+        h4 {
+          font-size: font-rem(21);
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        p {
+          font-size: font-rem(17);
+          text-transform: capitalize;
+          padding: 0 font-rem(30);
+        }
+        span {
+          font-size: font-rem(17);
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,24 @@
-.header header
+header.header
+    .header__upper
+        p Don’t miss out! Enjoy an extra 20% off all ‘Sale’ for a limited time only. 
+            a(href="#") Shop Now
+    .header__main
+        div.container
+            div.header__brand
+                select.header__currency
+                    option(value="$ USD") $ USD
+                    option(value="saab") Saab
+                    option(value="opel") Opel
+                div.header__logo LOGO GOES HERE
+                div.header__accountDetails
+                    select(name="")
+                        option(value="") Hello, My Account
+                        option(value="") get out
+                    ul
+                        - var values = ["icon-zoom", "icon-heart1", "icon-lock"];
+                        each val in values
+                            li
+                                a(href="")
+                                    span(class=`${val}`) 
+        include nav.pug
+

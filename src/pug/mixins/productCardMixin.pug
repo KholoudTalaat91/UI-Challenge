@@ -1,0 +1,6 @@
+//- -var content = {"imgPath":"","title":"", "path":""}
+mixin productCard(content)
+    .productCard
+        img(src=`${content.imgPath}`, alt=`${content.title}`)
+        h3=content.title
+        a(href=`${content.path}` title=`${content.title}`) shop now

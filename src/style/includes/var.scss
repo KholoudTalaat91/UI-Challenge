@@ -1,2 +1,12 @@
-$body-color: red;
 $segoeUI: "segoeUI-Semilight", sans-serif;
+$catamaran: "Catamaran", sans-serif;
+// font size to rem
+
+$font_base: 16;
+@function font-rem($font_size) {
+  @return ($font_size / $font_base) + rem;
+}
+//colors
+$black: #000000;
+$white: #ffffff;
+$pink: #b4777b;

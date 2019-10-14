@@ -70,7 +70,7 @@ const images = {
 };
 
 const fonts = {
-  test: /\.(woff|woff2|ttf|otf|eot)$/,
+  test: /\.(woff|woff2|ttf|otf|eot|svg)$/,
   use: [
     {
       loader: "file-loader",
