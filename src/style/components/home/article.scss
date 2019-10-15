@@ -1,0 +1,132 @@
+.article {
+  display: flex;
+  padding-top: font-rem(70);
+  @include belowTablet {
+    flex-direction: column;
+  }
+  &__images {
+    width: 60%;
+    padding-right: font-rem(30);
+    margin-bottom: font-rem(70);
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    @include belowTablet {
+      width: 100%;
+      padding-right: font-rem(0);
+    }
+    &::after {
+      content: "";
+      width: font-rem(140);
+      height: 1px;
+      background: $black;
+      position: absolute;
+      top: font-rem(64);
+      right: font-rem(-10);
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+    &_firstImg,
+    &_SecondImg {
+      max-width: 50%;
+      position: relative;
+    }
+    &_firstImg {
+      padding-top: font-rem(180);
+      padding-right: font-rem(15);
+      &::after {
+        content: "Designer Story";
+        letter-spacing: 12.381px;
+        font-size: font-rem(20);
+        position: absolute;
+        bottom: font-rem(25);
+        right: 0;
+        left: auto;
+        transform: translateX(215px);
+      }
+      &::before {
+        content: "";
+        width: font-rem(78);
+        height: font-rem(263);
+        background-image: url("../../assets/images/article.png");
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 50%);
+      }
+    }
+    &_SecondImg {
+      padding-left: font-rem(15);
+      &::before {
+        content: "";
+        height: font-rem(10);
+        opacity: 0.2;
+        position: absolute;
+        bottom: font-rem(34);
+        background-image: url("../../assets/images/article2.png");
+        width: calc(100% + 65px + 110px);
+        left: font-rem(-65);
+      }
+    }
+  }
+  &__imgContainer {
+    width: 100%;
+    position: relative;
+    img {
+      width: calc(100% - #{font-rem(140)});
+      margin: 0 0 0 auto;
+    }
+    &::before {
+      content: "";
+      width: font-rem(140);
+      height: font-rem(154);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: $gray2;
+    }
+    &::after {
+      content: "";
+      width: font-rem(110);
+      height: font-rem(324);
+      background-image: url("../../assets/images/mom.png");
+      position: absolute;
+      left: 0;
+      bottom: font-rem(70);
+      transform: translateX(calc(-50% + #{font-rem(140)}));
+    }
+  }
+  &__content {
+    width: 40%;
+    padding-left: font-rem(30);
+    margin-bottom: font-rem(70);
+    @include belowTablet {
+      width: 100%;
+      padding-left: 0;
+    }
+    time {
+      font-size: font-rem(12);
+      display: block;
+      margin-bottom: font-rem(10);
+    }
+    h2 {
+      margin-bottom: font-rem(15);
+      font-size: font-rem(43);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    p {
+      font-size: font-rem(14);
+      margin-bottom: font-rem(15);
+    }
+    .btn {
+      width: font-rem(258);
+    }
+  }
+}
+.victoriaArticle {
+  background: $lightPink;
+}

@@ -1,12 +1,15 @@
 //- -var content= {imgPath1: "", imgPath2: "", date: "", title: "", text: "", linkTitle: "", linkPath: ""} 
 mixin article(content)
-    article.article
-        div.article__images
-            img(src=`${content.imgPath1}`, alt=`${content.title}`)
-            if content.imgPath2
-                img(src=`${content.imgPath2}`, alt=`${content.title}`)
-        div.article__content
-            time=content.date
-            h2=content.title
-            p=content.text
-            a.btn(href=`${content.linkPath}` title=`${content.linkTitle}`)=content.linkTitle
+    .container
+        article.article
+            div.article__images
+                div(class=content.imgPath2 ? "article__images_firstImg": "article__imgContainer")
+                    img(src=`${content.imgPath1}`, alt=`${content.title}` )
+                if content.imgPath2
+                    div(class=content.imgPath2 ? "article__images_SecondImg": "")
+                        img(src=`${content.imgPath2}`, alt=`${content.title}`)
+            div.article__content
+                time=content.date
+                h2=content.title
+                p=content.text
+                a.btn(href=`${content.linkPath}` title=`${content.linkTitle}`)=content.linkTitle

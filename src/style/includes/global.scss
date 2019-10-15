@@ -3,6 +3,7 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   font-family: $catamaran;
+  overflow-x: hidden;
   * {
     box-sizing: border-box;
   }
@@ -68,4 +69,5 @@ button,
   font-family: $catamaran;
   font-size: font-rem(18);
   display: inline-block;
+  text-align: center;
 }
