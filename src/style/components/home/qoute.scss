@@ -1,0 +1,30 @@
+.qoute {
+  text-align: center;
+  blockquote {
+    font-size: font-rem(43);
+    position: relative;
+    margin: font-rem(135) font-rem(25) font-rem(25);
+    span {
+      position: absolute;
+      left: auto;
+      //   height: 25px;
+      //   width: 29px;
+      //   overflow: hidden;
+      font-size: font-rem(24);
+      &.icon-qoute-start {
+        transform: translate(-25px, -10px);
+      }
+      &.icon-qoute-end {
+        transform: translate(5px, -5px);
+      }
+    }
+    em {
+    }
+  }
+  address {
+    font-style: normal;
+    color: $pink3;
+    font-size: font-rem(21);
+    margin: 0 font-rem(25) font-rem(98);
+  }
+}
