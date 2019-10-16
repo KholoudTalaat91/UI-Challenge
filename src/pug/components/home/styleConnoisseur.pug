@@ -1,0 +1,17 @@
+include ../../mixins/form.pug
+//- mixin content 
+-var formContent = [
+-{label:"Occasion", selectArr: [{optionTxt:"Wedding", val:"Wedding"},{optionTxt:"engagement", val:"engagement"},{optionTxt:"prom", val:"prom"}]},
+-{label:"Style", selectArr: [{optionTxt:"Morning", val:"Morning"},{optionTxt:"afternoon", val:"afternoon"},{optionTxt:"evening", val:"evening"}]},
+-{label:"Price Range", placeholder:"$ 300 - 400", className: "priceInput"}, {btn: true, type:"submit", btnTxt:"Explore"}]
+
+//- code
+.container
+    section.styleConnoisseur
+        .styleConnoisseur__imgContainer
+            img(src="../../assets/images/form-bg.jpg" alt="Style Connoisseur")
+        .styleConnoisseur__body
+            h2 Style Connoisseur
+            p Don’t know what to do?
+            if formContent && formContent.length>0
+                +form(formContent)

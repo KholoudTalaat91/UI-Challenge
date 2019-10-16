@@ -1,0 +1,16 @@
+//- mixin declaration
+mixin form(formContent)
+    form.form(action="")
+        each formItem in formContent
+            if formItem.selectArr
+                .form__formGrp
+                    label=formItem.label
+                    select
+                        each option in formItem.selectArr
+                            option(value=`${option.val}`)=option.optionTxt
+            if formItem.className=="priceInput"
+                div(class=`form__formGrp_${formItem.className}`)
+                    label=formItem.label
+                    input(type="text" placeholder=`${formItem.placeholder}`)
+            if formItem.btn
+                button(type=`${formItem.type}`)=formItem.btnTxt

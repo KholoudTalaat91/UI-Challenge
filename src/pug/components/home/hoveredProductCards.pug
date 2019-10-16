@@ -1,0 +1,15 @@
+include ../../mixins/hoveredCards.pug
+//- mixin content 
+-var products =[
+-{img:"../../assets/images/hoveredProducts/1.jpg",title: "product title", linkTitle:"Shop The Look", linkPath: "#"},
+-{img:"../../assets/images/hoveredProducts/2.jpg",title: "product title", linkTitle:"Shop The Look", linkPath: "#"},
+-{img:"../../assets/images/hoveredProducts/3.jpg",title: "product title", linkTitle:"Shop The Look", linkPath: "#"},
+-{img:"../../assets/images/hoveredProducts/4.jpg",title: "product title", linkTitle:"Shop The Look", linkPath: "#"}
+-]
+//- code
+.hoveredProductCards
+    .container
+        h4.hoveredProductCards__title #NOMADSTORY
+        .productsContainer
+            +hoveredProducts(products)
+        span Follow us

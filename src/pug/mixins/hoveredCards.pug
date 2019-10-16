@@ -1,0 +1,8 @@
+//- mixin declaration
+mixin hoveredProducts(productsArr)
+    each product in productsArr
+        .product
+            .product__imgContainer
+                img(src=`${product.img}`, alt=`${product.title}`)
+            .product_hovered
+                a(href=`${product.linkPath}` title=`${product.title}`)=product.linkTitle

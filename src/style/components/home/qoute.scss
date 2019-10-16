@@ -18,7 +18,34 @@
         transform: translate(5px, -5px);
       }
     }
-    em {
+    strong {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        height: font-rem(10);
+        display: block;
+        position: absolute;
+      }
+      &:first-of-type {
+        &::before {
+          background: $pink2;
+          opacity: 0.2;
+          width: font-rem(227);
+          bottom: font-rem(18);
+          right: font-rem(200);
+        }
+      }
+      &:last-of-type {
+        &::after {
+          background: $black;
+          opacity: 0.05;
+          width: font-rem(591);
+          bottom: font-rem(20);
+          left: font-rem(2.5);
+        }
+      }
     }
   }
   address {
