@@ -1,9 +1,52 @@
 .footer
-    .footer__upper
-    .footer__copyrights
-        ul
-            li © Nomad Story 2019 
-            li Delaware File Number
-            li New York File Number
-        p Proudly made by
-            a(href="https://robustastudio.com/" target="_blank") robusta
+    .container
+        .footer__upper
+            .footer__listContainer
+                h3 Nomad story
+                div
+                    ul
+                        - var values = ["Manifesto" , "Designers", "Journal"];
+                        each val in values
+                            li
+                                a(href="")
+                                    span(class=`${val}`)=val
+                    ul
+                        - var values = ["Inspire Me" , "Work With Us", "Are You a Designer?"];
+                        each val in values
+                            li
+                                a(href="")
+                                    span(class=`${val}`)=val
+            .footer__listContainer
+                h3 Services
+                div
+                    ul
+                        - var values = ["FAQ " , "Shipping & Return", "Contact Us"];
+                        each val in values
+                            li
+                                a(href="")
+                                    span(class=`${val}`)=val
+                    ul
+                        - var values = ["Privacy Policy" , "Terms & Conditions"];
+                        each val in values
+                            li
+                                a(href="")
+                                    span(class=`${val}`)=val
+            .footer__newsLetter
+                h3 Subscribe
+                p Don’t miss out on our latest collections, exclusive products and news.
+                input(type="email" placeholder="Email")
+    .container
+        .footer__copyrights
+            ul.footer__copyrightsList
+                li © Nomad Story 2019 
+                li Delaware File Number
+                li New York File Number
+            p Proudly made by 
+                a(href="https://robustastudio.com/" target="_blank") robusta
+            ul.footer__socialMediaList
+                li Follow Us
+                    - var values = ["icon-Facebook", "icon-Instagram", "icon-Path"];
+                    each val in values
+                        li
+                            a(href="")
+                                span(class=`${val}`)

@@ -1,0 +1,117 @@
+.footer {
+  background: rgba($color: $gray, $alpha: 0.2);
+  padding-bottom: font-rem(48);
+  padding-top: font-rem(61);
+  margin-top: font-rem(10);
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    background-image: url("../../assets/images/M.png");
+    width: font-rem(59);
+    height: font-rem(106);
+    top: font-rem(123);
+  }
+  &__upper {
+    margin-bottom: font-rem(74);
+    display: flex;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    @include belowPhone {
+      flex-direction: column;
+    }
+    h3 {
+      font-size: font-rem(17);
+      font-weight: bold;
+      margin-bottom: font-rem(26);
+      position: relative;
+    }
+  }
+  &__listContainer {
+    div {
+      display: flex;
+      padding-right: font-rem(70);
+      ul {
+        padding-right: font-rem(40);
+        li {
+          padding-bottom: font-rem(10);
+          a {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  &__newsLetter {
+    h3 {
+      &::after {
+        content: "";
+        background: $pink2;
+        opacity: 0.2;
+        width: font-rem(166);
+        height: font-rem(10);
+        position: absolute;
+
+        left: font-rem(-25);
+        bottom: font-rem(5);
+      }
+    }
+    p {
+      font-size: font-rem(14);
+      margin-bottom: font-rem(60);
+    }
+
+    input {
+      background: none;
+      border: none;
+      width: 100%;
+      padding-bottom: font-rem(13);
+      border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+      background-image: url("../../assets/images/Shape.png");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+  }
+  &__copyrights {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include belowPhone {
+      flex-direction: column;
+    }
+    p {
+      a {
+        color: $black;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__copyrightsList {
+    font-size: font-rem(14);
+    li {
+      margin-bottom: font-rem(5);
+      &:first-child {
+        margin-bottom: font-rem(7);
+      }
+    }
+  }
+  &__socialMediaList {
+    display: flex;
+    li {
+      a {
+        width: font-rem(30);
+        height: font-rem(30);
+        border: 1px solid $pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: font-rem(40);
+        border-radius: 100%;
+      }
+      &:first-child {
+        margin-right: font-rem(20);
+      }
+    }
+  }
+}

@@ -1,23 +1,20 @@
-//body font
-@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700&display=swap");
+// //body font
+// @import url("https://fonts.googleapis.com/css?family=Catamaran:400,700&display=swap");
 
-// // icons
-// @font-face {
-//   font-family: "ci-icons";
-//   src: url("../fonts/ci-icons.eot?66fxw0");
-//   src: url("../fonts/ci-icons.eot?66fxw0#iefix") format("embedded-opentype"),
-//     url("../fonts/ci-icons.ttf?66fxw0") format("truetype"),
-//     url("../fonts/ci-icons.woff?66fxw0") format("woff"),
-//     url("../fonts/ci-icons.svg?66fxw0#ci-icons") format("svg");
-//   font-weight: normal;
-//   font-style: normal;
-//   font-display: block;
-// }
-// @font-face {
-//   font-family: myFirstFont;
-//   src: url(sansation_bold.woff);
-//   font-weight: bold;
-// }
+@font-face {
+  font-family: "Catamaran";
+  src: url("../fonts/Catamaran-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Catamaran";
+  src: url("../fonts/Catamaran-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}
 // icons
 @font-face {
   font-family: "ci-icons";

@@ -34,6 +34,8 @@
         width: 100%;
       }
       &__imgContainer {
+        position: relative;
+        z-index: 2;
         img {
           display: block;
           width: 100%;
@@ -51,6 +53,7 @@
         justify-content: center;
         opacity: 0;
         transition: all 200ms ease-out;
+        z-index: 3;
         a {
           color: $white;
           display: block;
@@ -74,6 +77,32 @@
       &:hover {
         .product_hovered {
           opacity: 1;
+        }
+      }
+      &:first-of-type {
+        &::before {
+          content: "";
+          width: font-rem(91);
+          height: font-rem(110);
+          background-image: url("../../assets/images/Group 5.png");
+          transform: translateX(-50%);
+
+          z-index: 1;
+          position: absolute;
+          left: 0;
+          bottom: font-rem(14);
+        }
+        &::after {
+          content: "";
+          width: font-rem(202);
+          height: font-rem(10);
+          background: rgba($color: $black, $alpha: 0.2);
+          transform: translateX(25%);
+
+          z-index: 3;
+          position: absolute;
+          right: 0;
+          bottom: 50%;
         }
       }
     }
