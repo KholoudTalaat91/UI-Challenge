@@ -1,1 +1,24 @@
-.carousel carousel
+//- content
+-var carouselContent = [
+-{img: "../../assets/images/carousel/1.jpg", type:"Style Elegantly", title:"Latest & Greatest", linkPath: "#", linkTxt:"Shop Now"},
+-{img: "../../assets/images/carousel/2.jpg", type:"Style Elegantly", title:"CASUAL WEAR", linkPath: "#", linkTxt:"Shop Now"},
+-{img: "../../assets/images/carousel/3.jpg", type:"Style Elegantly", title:"LAST DIPS OF SUMMER", linkPath: "#", linkTxt:"Shop Now"},
+-]
+
+//- code
+.slider
+    .container
+        each slide, index in carouselContent
+            .slider__slide
+                span.traingle
+                .slider__imgContainer
+                    img(src=`${slide.img}`)
+                .slider__caption
+                    p=slide.type
+                    h2=slide.title
+                    a.btn(href=`${slide.linkPath}`)=slide.linkTxt
+        .slider__controls
+            a#prev
+                span.icon-arrow-left
+            a#next
+                span.icon-arrow-right

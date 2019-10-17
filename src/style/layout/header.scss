@@ -75,4 +75,16 @@
       }
     }
   }
+  &__MobileMenu {
+    display: none;
+    @include belowPhone {
+      display: block;
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid $white;
+      cursor: pointer;
+    }
+  }
 }

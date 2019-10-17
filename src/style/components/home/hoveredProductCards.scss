@@ -12,14 +12,7 @@
     top: font-rem(60);
     right: 0;
   }
-  &::before {
-    content: "";
-    width: font-rem(210);
-    border-top: 1px solid $black;
-    position: absolute;
-    bottom: font-rem(79);
-    left: 0;
-  }
+
   &__title {
     font-size: font-rem(14);
     font-weight: normal;
@@ -89,5 +82,14 @@
     font-size: font-rem(20);
     letter-spacing: font-rem(12.381);
     padding-left: font-rem(150);
+    position: relative;
+    &::before {
+      content: "";
+      width: font-rem(500);
+      border-top: 1px solid $black;
+      position: absolute;
+      bottom: font-rem(16);
+      right: font-rem(207);
+    }
   }
 }

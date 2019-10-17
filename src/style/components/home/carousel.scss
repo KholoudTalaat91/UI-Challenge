@@ -1,2 +1,154 @@
-.carousel {
+.slider {
+  position: relative;
+  margin: 0 auto font-rem(80);
+  &::after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: font-rem(144);
+    opacity: 0.2;
+    background: $gray2;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  &__slide {
+    // display: none;
+    display: flex;
+    animation-name: fade;
+    animation-duration: 1.2s;
+    justify-content: flex-end;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+    &::before {
+      width: font-rem(91);
+      height: font-rem(110);
+      background-image: url("../../assets/images/Group 5.png");
+      right: 0;
+      transform: translateX(50%);
+      top: font-rem(63);
+    }
+    &::after {
+      left: 30%;
+      height: font-rem(10);
+      width: font-rem(357);
+      background: $black;
+      opacity: 0.05;
+      bottom: font-rem(30);
+      transform: translateX(#{font-rem(-205)});
+    }
+    span.traingle {
+      box-sizing: border-box;
+      display: block;
+      height: font-rem(228);
+      width: font-rem(106);
+      background: $gray2;
+      opacity: 0.6;
+      bottom: font-rem(0);
+      margin-top: auto;
+      //   transform: translateX(-100%);
+      @include belowPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__imgContainer {
+    position: relative;
+    max-width: 70%;
+    max-height: font-rem(550);
+    overflow: hidden;
+    @include belowPhone {
+      width: 100%;
+      max-width: unset;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__caption {
+    color: $black;
+    position: absolute;
+    left: 0;
+    top: font-rem(30);
+    p {
+      font-size: font-rem(20);
+      letter-spacing: font-rem(12.381);
+      margin-bottom: font-rem(9);
+      position: relative;
+      &::after {
+        content: "";
+        width: font-rem(210);
+        height: font-rem(1);
+        background: $black;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: font-rem(12);
+        z-index: 1;
+      }
+    }
+    h2 {
+      font-weight: bold;
+      font-size: font-rem(50);
+      text-transform: uppercase;
+      padding-left: font-rem(50);
+      margin-block: font-rem(24);
+    }
+    a {
+      width: font-rem(211);
+      margin-left: font-rem(50);
+      margin-bottom: font-rem(46);
+    }
+  }
+  &__controls {
+    padding-left: font-rem(50);
+    position: absolute;
+    top: font-rem(240);
+    display: flex;
+    #prev,
+    #next {
+      cursor: pointer;
+      display: inline-block;
+      margin-right: font-rem(35);
+      margin-left: 0;
+      border: 1px solid rgba($color: $black, $alpha: 0.4);
+      border-radius: 100%;
+      background: $white;
+      width: font-rem(40);
+      height: font-rem(40);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      @include belowPhone {
+        display: none;
+      }
+      &:hover {
+        color: $pink;
+        border-color: rgba($color: $pink, $alpha: 0.4);
+      }
+      &::before {
+        color: inherit;
+      }
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

@@ -109,8 +109,8 @@ module.exports = {
       template: path.resolve(__dirname, "src/pug/index.pug"),
       minify: false,
       hash: true,
-      chunks: ["index"]
-      // chunksSortMode: "manual"
+      chunks: ["index"],
+      chunksSortMode: "manual"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].bundle.css"

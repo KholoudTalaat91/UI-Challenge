@@ -4,10 +4,17 @@
   &__mainMenu {
   }
   &__mainMenuItemsContainer {
-    margin: 0px font-rem(125);
+    margin: 0px font-rem(125) font-rem(40);
     display: flex;
     justify-content: space-between;
     // position: relative;
+    @include belowTablet {
+      margin: 0 auto;
+    }
+    @include belowPhone {
+      flex-direction: column;
+      display: none;
+    }
   }
   &__mainMenuItem {
     a {
@@ -23,11 +30,29 @@
       }
       .nav__subMenu {
         display: flex;
+        z-index: 10;
+        @include belowPhone {
+          display: none;
+        }
+      }
+    }
+    &:last-child {
+      a {
+        background: $black;
+        color: $white;
+        padding-left: font-rem(10);
       }
     }
   }
   &__subMenu {
     padding: 0px calc((100% - 1210px) / 2 + 135px);
+    @include belowDesktop {
+      padding: 0px calc((100% - 992px) / 2 + 135px);
+    }
+    @include belowTablet {
+    }
+    @include belowPhone {
+    }
     z-index: 1;
     // padding: 0px font-rem(135);
     // padding: 0px font-rem(5);
@@ -75,6 +100,9 @@
     justify-content: space-between;
     width: 50%;
     margin-bottom: font-rem(20);
+    // @include belowTablet {
+    //   display: none;
+    // }
     li {
       //   width: 100%;
       flex-grow: 1;
